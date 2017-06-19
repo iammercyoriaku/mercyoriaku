@@ -1,0 +1,33 @@
+<html>
+
+  <head>
+
+    <title></title>
+
+  </head>
+
+  <body>
+
+    <p> Hello Express </p>
+
+  <script type="text/javascript">
+  	var xhr = new XMLHttpRequest();
+
+  	xhr.open("GET", "http://localhost:3000/api/v1/students");
+  	xhr.onreadystatechange = function () {
+  		handleResponse(xhr);
+
+  	}
+  	xhr.send(null);
+
+  	function handleResponse(http) {
+  		if(http.readyState == 4) {
+  			if(http.status == 200 || http.status == 304) {
+  				console.log(http.responseText);
+  			}
+  		}
+  	}
+
+  </script>
+  </body>
+  </html>  
